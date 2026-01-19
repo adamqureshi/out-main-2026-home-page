@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Only Used Tesla — Homepage Prototype</title>
+  <meta name="description" content="Prototype homepage layout for Only Used Tesla: simplified navigation, conversion-first layout, and mobile-friendly touch targets." />
+
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="topbar" aria-label="Utility navigation">
+      <div class="container topbar__inner">
+        <nav class="topbar__nav" aria-label="Utility">
+          <a class="topbar__link" href="#">Make payment</a>
+          <a class="topbar__link" href="#">Get report</a>
+          <a class="topbar__link" href="#">Blog</a>
+          <a class="topbar__link" href="#">Contact</a>
+          <a class="topbar__link" href="#">UK site</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="navbar" role="navigation" aria-label="Primary">
+      <div class="container navbar__inner">
+        <a class="brand" href="#" aria-label="Only Used Tesla">
+          <img class="brand__mark" src="assets/logo.svg" width="28" height="28" alt="" aria-hidden="true" />
+          <span class="brand__name">ONLY USED TESLA</span>
+        </a>
+
+        <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="#shop">Shop</a>
+          <a class="nav-link" href="#sell">Sell</a>
+          <a class="nav-link" href="#cash">Cash offer</a>
+          <a class="nav-link" href="#report">OUT‑Check</a>
+          <a class="nav-link" href="#finance">PAY‑OUT</a>
+          <a class="nav-link" href="#ai">AI agent</a>
+
+          <details class="nav-more">
+            <summary class="nav-link">More</summary>
+            <div class="nav-more__panel" role="menu" aria-label="More">
+              <a role="menuitem" href="#uk">UK site</a>
+              <a role="menuitem" href="#dealers">Dealers</a>
+              <a role="menuitem" href="#payment">Make payment</a>
+              <a role="menuitem" href="#blog">Blog</a>
+              <a role="menuitem" href="#contact">Contact</a>
+            </div>
+          </details>
+        </nav>
+
+        <div class="nav-ctas">
+          <a class="btn btn-secondary btn-small" href="#sell">Post a listing</a>
+          <a class="btn btn-primary btn-small" href="#account"><span class="label-long">Sign in / Register</span><span class="label-short">Sign in</span></a>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-controls="drawer" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
+
+  <aside class="drawer" id="drawer" aria-label="Site menu" hidden>
+    <div class="drawer__header">
+      <span class="drawer__title">Menu</span>
+      <button class="drawer__close" type="button" data-drawer-close>
+        <span class="sr-only">Close menu</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer__content">
+      <div class="drawer__section" aria-label="Main actions">
+        <a class="drawer__link" href="#shop">Shop used Teslas</a>
+        <a class="drawer__link" href="#sell">Sell my Tesla (buy an ad)</a>
+        <a class="drawer__link" href="#cash">Get cash offer</a>
+        <a class="drawer__link" href="#report">OUT‑Check report</a>
+        <a class="drawer__link" href="#finance">PAY‑OUT financing</a>
+        <a class="drawer__link" href="#ai">AI agent</a>
+      </div>
+
+      <hr class="drawer__divider" />
+
+      <div class="drawer__section" aria-label="Utilities">
+        <a class="drawer__link" href="#uk">UK site</a>
+        <a class="drawer__link" href="#dealers">Dealers</a>
+        <a class="drawer__link" href="#payment">Make payment</a>
+        <a class="drawer__link" href="#blog">Blog</a>
+        <a class="drawer__link" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="drawer__footer" aria-label="Account">
+      <a class="btn btn-primary btn-block" href="#account">Sign in / Register</a>
+      <a class="btn btn-secondary btn-block" href="#sell">Post a listing</a>
+    </div>
+  </aside>
+
+  <main id="main" class="site-main" role="main">
+    <section class="hero" aria-label="Homepage">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">Only Used Tesla</p>
+            <h1 class="hero__title">Buy or sell a Tesla — conversion‑first.</h1>
+            <p class="hero__subtitle">
+              Search dealer and private listings, post your Tesla for sale, or get a cash offer.
+              Add an <strong>OUT‑Check report</strong> to build trust with buyers.
+            </p>
+
+            <div class="hero__meta" aria-label="Highlights">
+              <div class="pill">Dealer + private ads</div>
+              <div class="pill">OUT‑Check report</div>
+              <div class="pill">PAY‑OUT financing</div>
+            </div>
+          </div>
+
+          <div class="hero__card" aria-label="Primary actions">
+            <div class="segmented" role="tablist" aria-label="Shop or sell">
+              <button class="segmented__btn" role="tab" id="tab-shop" aria-controls="panel-shop" aria-selected="true">Shop</button>
+              <button class="segmented__btn" role="tab" id="tab-sell" aria-controls="panel-sell" aria-selected="false">Sell</button>
+            </div>
+
+            <div class="tab-panels">
+              <section id="panel-shop" class="tab-panel" role="tabpanel" aria-labelledby="tab-shop">
+                <form class="form" action="#" method="get">
+                  <div class="form-grid">
+                    <label class="field">
+                      <span class="field__label">Model</span>
+                      <select class="field__control" name="model">
+                        <option value="">Any model</option>
+                        <option>Model 3</option>
+                        <option>Model Y</option>
+                        <option>Model S</option>
+                        <option>Model X</option>
+                        <option>Cybertruck</option>
+                      </select>
+                    </label>
+
+                    <label class="field">
+                      <span class="field__label">Year</span>
+                      <select class="field__control" name="year">
+                        <option value="">Any year</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                        <option>2019</option>
+                        <option>2018</option>
+                      </select>
+                    </label>
+
+                    <label class="field">
+                      <span class="field__label">Location</span>
+                      <input class="field__control" name="location" type="text" inputmode="text" autocomplete="postal-code" placeholder="City or postcode" />
+                    </label>
+                  </div>
+
+                  <button class="btn btn-primary btn-block" type="submit">Search listings</button>
+                  <p class="form-hint">Optimized for mobile. Big touch targets. No decorative noise.</p>
+                </form>
+              </section>
+
+              <section id="panel-sell" class="tab-panel" role="tabpanel" aria-labelledby="tab-sell" hidden>
+                <div class="stack">
+                  <article class="action-card" aria-label="Sell my Tesla">
+                    <h3 class="action-card__title">Post a private seller ad</h3>
+                    <p class="action-card__desc">List your Tesla with photos and details. Upgrade with an OUT‑Check report for trust.</p>
+                    <a class="btn btn-primary btn-block" href="#sell">Buy an ad</a>
+                  </article>
+
+                  <article class="action-card" aria-label="Cash offer">
+                    <h3 class="action-card__title">Get a cash offer</h3>
+                    <p class="action-card__desc">Share a few details and receive offers from our dealer network.</p>
+                    <a class="btn btn-secondary btn-block" href="#cash">Get cash offer</a>
+                  </article>
+
+                  <article class="action-card" aria-label="OUT-Check">
+                    <h3 class="action-card__title">OUT‑Check report</h3>
+                    <p class="action-card__desc">Connect to an owner’s Tesla account and generate a buyer‑friendly report.</p>
+                    <a class="btn btn-secondary btn-block" href="#report">Get report</a>
+                  </article>
+                </div>
+
+                <div class="divider"></div>
+
+                <a class="btn btn-tertiary btn-block" href="#ai">Use the AI agent to price & write your listing</a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products" aria-label="Products">
+      <div class="container">
+        <h2 class="section__title">Your products — simplified and easy to tap</h2>
+        <p class="section__subtitle">These are the key revenue flows. Everything else can live in “More”.</p>
+
+        <div class="card-grid">
+          <article class="feature-card" id="shop">
+            <h3>Shop used Tesla</h3>
+            <p>Search listings from dealers and private sellers.</p>
+            <a class="feature-card__link" href="#">Search listings</a>
+          </article>
+
+          <article class="feature-card" id="sell">
+            <h3>Sell my Tesla</h3>
+            <p>Private sellers buy an ad. Dealers advertise inventory.</p>
+            <a class="feature-card__link" href="#">Buy an ad</a>
+          </article>
+
+          <article class="feature-card" id="cash">
+            <h3>Get cash offer</h3>
+            <p>Get offers from your dealer network — fast.</p>
+            <a class="feature-card__link" href="#">Get cash offer</a>
+          </article>
+
+          <article class="feature-card" id="report">
+            <h3>OUT‑Check report</h3>
+            <p>Connect to an owner’s Tesla and print a report for buyers.</p>
+            <a class="feature-card__link" href="#">Get report</a>
+          </article>
+
+          <article class="feature-card" id="ai">
+            <h3>AI agent</h3>
+            <p>Help users buy/sell: pricing, listing copy, Q&A, next steps.</p>
+            <a class="feature-card__link" href="#">Try AI agent</a>
+          </article>
+
+          <article class="feature-card" id="finance">
+            <h3>PAY‑OUT financing</h3>
+            <p>Start financing online (application + payment flow).</p>
+            <a class="feature-card__link" href="#">Start financing</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-label="Private seller flow">
+      <div class="container">
+        <h2 class="section__title">Private seller conversion flow</h2>
+        <div class="split">
+          <div class="callout">
+            <h3>Goal: sell the ad + the OUT‑Check report</h3>
+            <ol class="steps">
+              <li><strong>Create account</strong> (or sign in)</li>
+              <li><strong>Buy an ad</strong> (post listing)</li>
+              <li><strong>Add OUT‑Check</strong> (trust + higher conversion)</li>
+              <li><strong>Optional:</strong> use AI agent to negotiate</li>
+            </ol>
+            <p class="muted">This section is here to communicate intent to your backend dev — not final copy.</p>
+          </div>
+
+          <div class="cta-box" id="account" aria-label="Account call to action">
+            <h3>Start here</h3>
+            <p>Big buttons for mobile “fat finger” use.</p>
+            <div class="stack">
+              <a class="btn btn-primary btn-block" href="#">Sign in</a>
+              <a class="btn btn-secondary btn-block" href="#">Create account</a>
+              <a class="btn btn-tertiary btn-block" href="#sell">Buy an ad</a>
+              <a class="btn btn-tertiary btn-block" href="#report">Get OUT‑Check report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Footer lead-in">
+      <div class="container">
+        <div class="notice">
+          <strong>Prototype notes:</strong> This layout is grayscale, image-free, and mobile-first.
+          It’s meant to communicate navigation structure + homepage hierarchy.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">ONLY USED TESLA</div>
+          <p class="footer__desc">Used Tesla marketplace + seller tools (ads, cash offer, reports, financing).</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Products">
+          <h4>Products</h4>
+          <a href="#shop">Shop</a>
+          <a href="#sell">Sell (buy an ad)</a>
+          <a href="#cash">Cash offer</a>
+          <a href="#report">OUT‑Check</a>
+          <a href="#finance">PAY‑OUT</a>
+          <a href="#ai">AI agent</a>
+        </nav>
+
+        <nav class="footer__nav" aria-label="Company">
+          <h4>Company</h4>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#dealers">Dealers</a>
+          <a href="#uk">UK site</a>
+        </nav>
+
+        <nav class="footer__nav" aria-label="Utilities">
+          <h4>Utilities</h4>
+          <a href="#payment">Make payment</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Only Used Tesla</span>
+        <span class="footer__sep">·</span>
+        <span class="muted">Prototype HTML (no backend)</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie" role="dialog" aria-label="Cookie notice" aria-live="polite" data-cookie-banner>
+    <div class="cookie__inner">
+      <p class="cookie__text">
+        We use cookies to understand traffic and improve the site.
+      </p>
+      <div class="cookie__actions">
+        <button class="btn btn-secondary btn-small" type="button" data-cookie-decline>Decline</button>
+        <button class="btn btn-primary btn-small" type="button" data-cookie-accept>Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
