@@ -48,30 +48,57 @@
   var backdrop = document.querySelector('[data-drawer-backdrop]');
   var closeBtn = document.querySelector('[data-drawer-close]');
 
-  function openDrawer() {
-    if (!drawer || !backdrop || !navToggle) return;
-    drawer.hidden = false;
-    backdrop.hidden = false;
-    navToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  // iOS / mobile sometimes triggers a “ghost” click on the element behind the drawer
+  // right after closing. We guard against immediate re-open.
+  var lastCloseAt = 0;
+
+  function setDrawerOpen(isOpen) {
+    if (drawer) drawer.hidden = !isOpen;
+    if (backdrop) backdrop.hidden = !isOpen;
+    if (navToggle) navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    // Scroll lock (more reliable than inline overflow on some mobile browsers)
+    document.documentElement.classList.toggle('drawer-open', !!isOpen);
+    document.body.classList.toggle('drawer-open', !!isOpen);
+  }
+
+  function openDrawer(e) {
+    // Prevent immediate reopen caused by a ghost click right after close
+    var now = Date.now();
+    if (now - lastCloseAt < 400) return;
+
+    if (e && e.preventDefault) e.preventDefault();
+    setDrawerOpen(true);
 
     // Focus first link for accessibility
-    var firstLink = drawer.querySelector('a, button');
-    if (firstLink) firstLink.focus();
+    var firstLink = drawer && drawer.querySelector('a, button');
+    if (firstLink && firstLink.focus) {
+      try { firstLink.focus(); } catch (err) {}
+    }
   }
 
-  function closeDrawer() {
-    if (!drawer || !backdrop || !navToggle) return;
-    drawer.hidden = true;
-    backdrop.hidden = true;
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    navToggle.focus();
+  function closeDrawer(e) {
+    lastCloseAt = Date.now();
+    if (e) {
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+    }
+    setDrawerOpen(false);
   }
 
-  if (navToggle) navToggle.addEventListener('click', openDrawer);
-  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+  if (navToggle) {
+    navToggle.addEventListener('click', openDrawer);
+    // Faster + more reliable on iOS in in-app browsers
+    navToggle.addEventListener('touchstart', openDrawer, { passive: false });
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('touchstart', closeDrawer, { passive: false });
+  }
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('touchstart', closeDrawer, { passive: false });
+  }
 
   if (drawer) {
     drawer.addEventListener('click', function (e) {
@@ -80,6 +107,15 @@
       if (target && target.tagName === 'A') closeDrawer();
     });
   }
+
+  // If backdrop is missing for any reason, still allow tap-outside to close.
+  document.addEventListener('click', function (e) {
+    if (!drawer || drawer.hidden) return;
+    var t = e.target;
+    if (t && drawer.contains(t)) return;
+    if (navToggle && navToggle.contains(t)) return;
+    closeDrawer(e);
+  });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && drawer && !drawer.hidden) closeDrawer();
