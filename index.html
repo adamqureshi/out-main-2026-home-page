@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
   <title>Only Used Tesla — Homepage Prototype</title>
-  <meta name="description" content="Prototype homepage layout for Only Used Tesla: simplified navigation, conversion-first layout, and mobile-friendly touch targets." />
+  <meta name="description" content="Only Used Tesla: get a cash offer from dealers, post a $47 listing, or shop Tesla listings." />
 
   <link rel="preload" href="styles.css" as="style" />
   <link rel="stylesheet" href="styles.css" />
@@ -55,7 +55,7 @@
         </nav>
 
         <div class="nav-ctas">
-          <a class="btn btn-secondary btn-small" href="#sell">Post a listing</a>
+          <a class="btn btn-secondary btn-small" href="#sell">Post for $47</a>
           <a class="btn btn-primary btn-small" href="#account"><span class="label-long">Sign in / Register</span><span class="label-short">Sign in</span></a>
         </div>
 
@@ -89,10 +89,10 @@
 
     <div class="drawer__content">
       <div class="drawer__section" aria-label="Main actions">
-        <a class="drawer__link" href="#shop">Shop used Teslas</a>
-        <a class="drawer__link" href="#sell">Sell my Tesla (buy an ad)</a>
         <a class="drawer__link" href="#cash">Get cash offer</a>
-        <a class="drawer__link" href="#report">OUT‑Check report</a>
+        <a class="drawer__link" href="#sell">Post a listing — $47</a>
+        <a class="drawer__link" href="#shop">Shop used Teslas</a>
+        <a class="drawer__link" href="#report">OUT‑Check report (soon)</a>
         <a class="drawer__link" href="#finance">PAY‑OUT financing</a>
         <a class="drawer__link" href="#ai">AI agent</a>
       </div>
@@ -110,7 +110,7 @@
 
     <div class="drawer__footer" aria-label="Account">
       <a class="btn btn-primary btn-block" href="#account">Sign in / Register</a>
-      <a class="btn btn-secondary btn-block" href="#sell">Post a listing</a>
+      <a class="btn btn-secondary btn-block" href="#sell">Post for $47</a>
     </div>
   </aside>
 
@@ -120,27 +120,27 @@
         <div class="hero__grid">
           <div class="hero__copy">
             <p class="eyebrow">Only Used Tesla</p>
-            <h1 class="hero__title">Buy or sell a Tesla — conversion‑first.</h1>
+            <h1 class="hero__title">Get a cash offer for your Tesla.</h1>
             <p class="hero__subtitle">
-              Search dealer and private listings, post your Tesla for sale, or get a cash offer.
-              Add an <strong>OUT‑Check report</strong> to build trust with buyers.
+              Dealers in our network send offers. No pressure — choose the one you want.
+              Or post your own listing for <strong>$47</strong>.
             </p>
 
             <div class="hero__meta" aria-label="Highlights">
-              <div class="pill">Dealer + private ads</div>
-              <div class="pill">OUT‑Check report</div>
-              <div class="pill">PAY‑OUT financing</div>
+              <div class="pill">Cash offers</div>
+              <div class="pill">$47 listing</div>
+              <div class="pill">OUT‑Check report (soon)</div>
             </div>
           </div>
 
           <div class="hero__card" aria-label="Primary actions">
             <div class="segmented" role="tablist" aria-label="Shop or sell">
-              <button class="segmented__btn" role="tab" id="tab-shop" aria-controls="panel-shop" aria-selected="true">Shop</button>
-              <button class="segmented__btn" role="tab" id="tab-sell" aria-controls="panel-sell" aria-selected="false">Sell</button>
+              <button class="segmented__btn" role="tab" id="tab-shop" aria-controls="panel-shop" aria-selected="false">Shop</button>
+              <button class="segmented__btn" role="tab" id="tab-sell" aria-controls="panel-sell" aria-selected="true">Sell</button>
             </div>
 
             <div class="tab-panels">
-              <section id="panel-shop" class="tab-panel" role="tabpanel" aria-labelledby="tab-shop">
+              <section id="panel-shop" class="tab-panel" role="tabpanel" aria-labelledby="tab-shop" hidden>
                 <form class="form" action="#" method="get">
                   <div class="form-grid">
                     <label class="field">
@@ -177,34 +177,34 @@
                   </div>
 
                   <button class="btn btn-primary btn-block" type="submit">Search listings</button>
-                  <p class="form-hint">Optimized for mobile. Big touch targets. No decorative noise.</p>
+                  <p class="form-hint">Dealer + private listings.</p>
                 </form>
               </section>
 
-              <section id="panel-sell" class="tab-panel" role="tabpanel" aria-labelledby="tab-sell" hidden>
+              <section id="panel-sell" class="tab-panel" role="tabpanel" aria-labelledby="tab-sell">
                 <div class="stack">
-                  <article class="action-card" aria-label="Sell my Tesla">
-                    <h3 class="action-card__title">Post a private seller ad</h3>
-                    <p class="action-card__desc">List your Tesla with photos and details. Upgrade with an OUT‑Check report for trust.</p>
-                    <a class="btn btn-primary btn-block" href="#sell">Buy an ad</a>
-                  </article>
-
                   <article class="action-card" aria-label="Cash offer">
                     <h3 class="action-card__title">Get a cash offer</h3>
-                    <p class="action-card__desc">Share a few details and receive offers from our dealer network.</p>
-                    <a class="btn btn-secondary btn-block" href="#cash">Get cash offer</a>
+                    <p class="action-card__desc">Answer a few questions. Get offers from dealers.</p>
+                    <a class="btn btn-primary btn-block" href="#cash">Start cash offer</a>
+                  </article>
+
+                  <article class="action-card" aria-label="Sell my Tesla">
+                    <h3 class="action-card__title">Post a listing — $47</h3>
+                    <p class="action-card__desc">Sell it yourself with a simple ad.</p>
+                    <a class="btn btn-secondary btn-block" href="#sell">Post my Tesla</a>
                   </article>
 
                   <article class="action-card" aria-label="OUT-Check">
-                    <h3 class="action-card__title">OUT‑Check report</h3>
-                    <p class="action-card__desc">Connect to an owner’s Tesla account and generate a buyer‑friendly report.</p>
-                    <a class="btn btn-secondary btn-block" href="#report">Get report</a>
+                    <h3 class="action-card__title">OUT‑Check Tesla report (coming soon)</h3>
+                    <p class="action-card__desc">Connect your Tesla account. Generate a shareable report for buyers.</p>
+                    <a class="btn btn-tertiary btn-block" href="#report">Get notified</a>
                   </article>
                 </div>
 
                 <div class="divider"></div>
 
-                <a class="btn btn-tertiary btn-block" href="#ai">Use the AI agent to price & write your listing</a>
+                <a class="btn btn-tertiary btn-block" href="#ai">Need help? Ask the AI agent</a>
               </section>
             </div>
           </div>
@@ -214,83 +214,58 @@
 
     <section class="section" id="products" aria-label="Products">
       <div class="container">
-        <h2 class="section__title">Your products — simplified and easy to tap</h2>
-        <p class="section__subtitle">These are the key revenue flows. Everything else can live in “More”.</p>
+        <h2 class="section__title">Choose your next step</h2>
+        <p class="section__subtitle">Tap to start.</p>
 
         <div class="card-grid">
-          <article class="feature-card" id="shop">
-            <h3>Shop used Tesla</h3>
-            <p>Search listings from dealers and private sellers.</p>
-            <a class="feature-card__link" href="#">Search listings</a>
+          <article class="feature-card" id="cash">
+            <h3>Get a cash offer</h3>
+            <p>Dealers send offers. You pick.</p>
+            <a class="feature-card__link" href="#cash">Start cash offer</a>
           </article>
 
           <article class="feature-card" id="sell">
-            <h3>Sell my Tesla</h3>
-            <p>Private sellers buy an ad. Dealers advertise inventory.</p>
-            <a class="feature-card__link" href="#">Buy an ad</a>
+            <h3>Post a listing — $47</h3>
+            <p>Advertise your Tesla to buyers.</p>
+            <a class="feature-card__link" href="#sell">Post my Tesla</a>
           </article>
 
-          <article class="feature-card" id="cash">
-            <h3>Get cash offer</h3>
-            <p>Get offers from your dealer network — fast.</p>
-            <a class="feature-card__link" href="#">Get cash offer</a>
+          <article class="feature-card" id="shop">
+            <h3>Shop Teslas</h3>
+            <p>Search dealer + private listings.</p>
+            <a class="feature-card__link" href="#shop">Search listings</a>
           </article>
 
           <article class="feature-card" id="report">
-            <h3>OUT‑Check report</h3>
-            <p>Connect to an owner’s Tesla and print a report for buyers.</p>
-            <a class="feature-card__link" href="#">Get report</a>
+            <h3>OUT‑Check report (soon)</h3>
+            <p>Connect your Tesla account to generate a buyer‑ready report.</p>
+            <a class="feature-card__link" href="#report">Get notified</a>
           </article>
 
           <article class="feature-card" id="ai">
             <h3>AI agent</h3>
-            <p>Help users buy/sell: pricing, listing copy, Q&A, next steps.</p>
-            <a class="feature-card__link" href="#">Try AI agent</a>
+            <p>Price your Tesla and write the listing.</p>
+            <a class="feature-card__link" href="#ai">Try AI agent</a>
           </article>
 
           <article class="feature-card" id="finance">
             <h3>PAY‑OUT financing</h3>
-            <p>Start financing online (application + payment flow).</p>
-            <a class="feature-card__link" href="#">Start financing</a>
+            <p>Start financing online.</p>
+            <a class="feature-card__link" href="#finance">Start financing</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--surface" aria-label="Private seller flow">
+    <section class="section section--surface" id="account" aria-label="Account">
       <div class="container">
-        <h2 class="section__title">Private seller conversion flow</h2>
-        <div class="split">
-          <div class="callout">
-            <h3>Goal: sell the ad + the OUT‑Check report</h3>
-            <ol class="steps">
-              <li><strong>Create account</strong> (or sign in)</li>
-              <li><strong>Buy an ad</strong> (post listing)</li>
-              <li><strong>Add OUT‑Check</strong> (trust + higher conversion)</li>
-              <li><strong>Optional:</strong> use AI agent to negotiate</li>
-            </ol>
-            <p class="muted">This section is here to communicate intent to your backend dev — not final copy.</p>
+        <div class="cta-box">
+          <h2 class="section__title">Sign in / Create account</h2>
+          <p class="section__subtitle">Save listings and track offers.</p>
+          <div class="stack">
+            <a class="btn btn-primary btn-block" href="#">Sign in</a>
+            <a class="btn btn-secondary btn-block" href="#">Create account</a>
           </div>
-
-          <div class="cta-box" id="account" aria-label="Account call to action">
-            <h3>Start here</h3>
-            <p>Big buttons for mobile “fat finger” use.</p>
-            <div class="stack">
-              <a class="btn btn-primary btn-block" href="#">Sign in</a>
-              <a class="btn btn-secondary btn-block" href="#">Create account</a>
-              <a class="btn btn-tertiary btn-block" href="#sell">Buy an ad</a>
-              <a class="btn btn-tertiary btn-block" href="#report">Get OUT‑Check report</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Footer lead-in">
-      <div class="container">
-        <div class="notice">
-          <strong>Prototype notes:</strong> This layout is grayscale, image-free, and mobile-first.
-          It’s meant to communicate navigation structure + homepage hierarchy.
         </div>
       </div>
     </section>
@@ -301,13 +276,13 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand">ONLY USED TESLA</div>
-          <p class="footer__desc">Used Tesla marketplace + seller tools (ads, cash offer, reports, financing).</p>
+          <p class="footer__desc">Tesla listings + seller tools (cash offer, $47 listing, reports).</p>
         </div>
 
         <nav class="footer__nav" aria-label="Products">
           <h4>Products</h4>
           <a href="#shop">Shop</a>
-          <a href="#sell">Sell (buy an ad)</a>
+          <a href="#sell">Post listing ($47)</a>
           <a href="#cash">Cash offer</a>
           <a href="#report">OUT‑Check</a>
           <a href="#finance">PAY‑OUT</a>
@@ -341,7 +316,7 @@
   <div class="cookie" role="dialog" aria-label="Cookie notice" aria-live="polite" data-cookie-banner>
     <div class="cookie__inner">
       <p class="cookie__text">
-        We use cookies to understand traffic and improve the site.
+        We use cookies to improve the site.
       </p>
       <div class="cookie__actions">
         <button class="btn btn-secondary btn-small" type="button" data-cookie-decline>Decline</button>
